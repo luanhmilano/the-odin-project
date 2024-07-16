@@ -1,5 +1,7 @@
 const buttons = document.querySelectorAll("button");
 const divResult = document.querySelector(".result")
+const divWinner = document.querySelector(".winner")
+const restartButton = document.querySelector("#restart");
 
 const p = document.createElement("p")
 
@@ -112,14 +114,42 @@ function playGame(human) {
 
 //playGame()
 
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        console.clear()
-        ++round
-        if (round <= 5) {
-            playGame(button.value)
-        } else {
-            console.log("MAX")
-        }
-    })
+// DESACOPLAR A VERIFICAÇÃO DO VENCEDOR
+function checkWinner() {
+    if (computerScore > humanScore) {
+        divWinner.textContent = "COMPUTER WINS"
+    } else if (humanScore > computerScore) {
+        divWinner.textContent = "HUMAN WINS"
+    } else {
+        divWinner.textContent = "DRAW"
+    }
+    restartButton.style.display = "block";
+}
+
+// RODADAS A CADA CLIQUE NAS CHOICES
+function handleClick(button) {
+    console.clear()
+    round++
+    if (round < 5) {
+        playGame(button.value)
+    } else {
+        checkWinner()
+    }
+}
+
+// RESETA O GAME AO FIM DAS RODADAS
+function resetGame() {
+    round = 0
+    computerScore = 0
+    humanScore = 0
+    divWinner.textContent = ""
+    divResult.innerHTML = ""
+    restartButton.style.display = "none"
+    console.clear()
+}
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => handleClick(button))
 })
+
+restartButton.addEventListener("click", resetGame)
