@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace
+}
+
+body {
+    background-color: #717171;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 10rem;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    font-size: 30px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #000;
+    scale: 1.1;
+}
+
+.winner {
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ff0000;
+}

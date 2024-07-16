@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main>
+        <section>
+            <h1>Rock, Paper, Scissors</h1>
+            <p>Your choice: </p>
+            <button id="rock" value="rock">Rock</button>
+            <button id="paper" value="paper">Paper</button>
+            <button id="scissors" value="scissors">Scissors</button>
+        </section>
+        <div class="result"></div>
+        <div class="winner"></div>
+        <button id="restart" style="display:none;">Play again</button>
+    </main>
+
+    <script src="main.js" defer></script>
 </body>
 </html>
