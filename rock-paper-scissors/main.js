@@ -1,10 +1,17 @@
+<<<<<<< Updated upstream
 const buttons = document.querySelectorAll("button");
+=======
+const buttons = document.querySelectorAll("button:not(#restart)");
+>>>>>>> Stashed changes
 const divResult = document.querySelector(".result")
 const divWinner = document.querySelector(".winner")
 const restartButton = document.querySelector("#restart");
 
+<<<<<<< Updated upstream
 const p = document.createElement("p")
 
+=======
+>>>>>>> Stashed changes
 let humanScore = 0
 let computerScore = 0
 let round = 0
@@ -12,12 +19,17 @@ let round = 0
 
 function getComputerChoice() {
     const values = ['rock', 'paper', 'scissors']
+<<<<<<< Updated upstream
     const num = Math.round(Math.random() * (values.length - 1));
+=======
+    const num = Math.floor(Math.random() * values.length);
+>>>>>>> Stashed changes
     return values[num]
 }
 
 function playRound(humanChoice, computerChoice) {
     let result = "";
+<<<<<<< Updated upstream
 
     switch (humanChoice) {
         case "rock":
@@ -115,6 +127,50 @@ function playGame(human) {
 //playGame()
 
 // DESACOPLAR A VERIFICAÇÃO DO VENCEDOR
+=======
+
+    if (humanChoice === computerChoice) {
+        result = `Draw! Both chose ${humanChoice}`;
+    } else if (
+        (humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'paper' && computerChoice === 'rock') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+        result = `You win! ${humanChoice} beats ${computerChoice}`;
+        humanScore++;
+    } else {
+        result = `You lose! ${computerChoice} beats ${humanChoice}`;
+        computerScore++;
+    }
+
+    return result
+
+}
+
+function updateResultDisplay(humanChoice, computerChoice, result) {
+    divResult.innerHTML = `
+        <p>Human choice: ${humanChoice}</p>
+        <p>Computer choice: ${computerChoice}</p>
+        <p>${result}</p>
+        <p>SCORE HUMAN: ${humanScore}</p>
+        <p>SCORE COMPUTER: ${computerScore}</p>
+    `
+}
+
+
+function playGame(humanChoice) {
+
+    const computerChoice = getComputerChoice()
+    const result = playRound(humanChoice, computerChoice)
+    updateResultDisplay(humanChoice, computerChoice, result);
+
+    if (round >= 5 || humanScore >= 3 || computerScore >= 3) {
+        checkWinner()
+    }
+}
+
+
+>>>>>>> Stashed changes
 function checkWinner() {
     if (computerScore > humanScore) {
         divWinner.textContent = "COMPUTER WINS"
@@ -126,7 +182,10 @@ function checkWinner() {
     restartButton.style.display = "block";
 }
 
+<<<<<<< Updated upstream
 // RODADAS A CADA CLIQUE NAS CHOICES
+=======
+>>>>>>> Stashed changes
 function handleClick(button) {
     console.clear()
     round++
@@ -137,7 +196,10 @@ function handleClick(button) {
     }
 }
 
+<<<<<<< Updated upstream
 // RESETA O GAME AO FIM DAS RODADAS
+=======
+>>>>>>> Stashed changes
 function resetGame() {
     round = 0
     computerScore = 0
