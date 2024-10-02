@@ -1,0 +1,19 @@
+main > div {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+}
+
+main > div > div {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}
+
+.group1 + div {
+    background-color: green;
+}
+
+.group1 + div + div {
+    background-color: yellow;
+}
