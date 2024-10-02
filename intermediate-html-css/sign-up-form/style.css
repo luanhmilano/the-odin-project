@@ -1,0 +1,69 @@
+@font-face {
+    font-family: NorseBold;
+    src: url('../sign-up-form/fonts/Norse-Bold.otf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+}
+
+aside {
+    background-image: url(assets/lexi-laginess-TTUvyE7MwkM-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.501);
+    width: 100%;
+    margin-top: -15rem;
+    padding: 10px;
+}
+
+h1 {
+    font-family: NorseBold, sans-serif;
+    color: #fff;
+    font-size: 4.5rem;
+}
+
+main {
+    background-color: brown;
+    height: 100%;
+    width: 70vw;
+}
+
+main div {
+    width: 100%;
+}
+
+.top-div {
+    background-color: yellow;
+    height: 30vh;
+}
+
+.middle-div {
+    background-color: cornsilk;
+    height: 40vh;
+}
+
+.bottom-div {
+    background-color: blueviolet;
+    height: 30vh;
+}
