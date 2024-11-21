@@ -45,9 +45,10 @@ h1 {
 }
 
 main {
-    background-color: brown;
     height: 100%;
     width: 70vw;
+    display: flex;
+    flex-direction: column;
 }
 
 main div {
@@ -75,10 +76,75 @@ main div {
 
 .middle-div {
     background-color: rgb(255, 255, 255);
-    height: 40vh;
+    height: 100%;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    padding-left: 30px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+
+.form-content {
+    height: 50%;
+    display: grid;
+    grid-template-columns: 0fr 0fr;
+    grid-template-rows: 75px 75px;
+    gap: 10px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.2  );
+}
+
+.form-content label {
+    padding: 30px;
+    font-size: small;
+}
+
+input {
+    line-height: 1.5rem;
+    border-color: #E5E7EB;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+label input:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 2px 2px 0 lightblue, 0 3px 10px 0 lightblue;
 }
 
 .bottom-div {
+    padding: 30px;
     background-color: rgb(238, 238, 237);
-    height: 30vh;
+    height: 50%;
+}
+
+.bottom-div button {
+    background-color: #596D48;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.login-link {
+    color: #596D48;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+input:required:valid {
+    border: 2px solid #009900;
+}
+
+input:required:not(:placeholder-shown):invalid  {
+    border: 2px solid #c9001b;
 }

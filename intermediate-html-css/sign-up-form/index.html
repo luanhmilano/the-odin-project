@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <aside>
@@ -20,8 +21,36 @@
             <p>Sign up now to get started</p>
             <p>You <i>know</i> you want to.</p>
         </div>
-        <div class="middle-div"></div>
-        <div class="bottom-div"></div>
+        <div class="middle-div">
+            <form>
+                <p class="form-title">Let's Do This!</p>
+                <div class="form-content">
+                    <label for="first-name"> FIRST NAME
+                        <input type="text" placeholder="" name="first-name" class="names" required >
+                    </label>
+                    <label for="last-name"> LAST NAME
+                        <input type="text" placeholder="" name="last-name" class="names" required >
+                    </label>
+                    <label for="email"> EMAIL
+                        <input type="email" placeholder="" name="email" class="names" required >
+                    </label>
+                    <label for="phone-number"> PHONE NUMBER
+                        <input type="number" placeholder="" name="phone-number" class="names" required >
+                    </label>
+                    <label for="password"> PASSWORD
+                        <input type="password" placeholder="" id="password" name="password" class="names" required >
+                    </label>
+                    <label for="confirm-password"> CONFIRM PASSWORD
+                        <input type="password" placeholder="" id="confirm-password" name="confirm-password" class="names" required 
+                        onchange="conferirSenha()">
+                    </label>
+                </div>
+                <div class="bottom-div">
+                    <button type="submit">Create Account</button>
+                    <p>Already have an account? <span><a class="login-link" href="#">Log in</a></span></p>
+                </div>
+            </form>
+        </div>
     </main>
 </body>
 </html>
